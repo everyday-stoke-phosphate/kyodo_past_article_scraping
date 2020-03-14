@@ -85,3 +85,12 @@ class SearchArticleSpider(scrapy.Spider):
             )
 
         pass
+
+    def parse_article_detail(self):
+        # todo 記事の詳細をパース
+
+        # 記事に指定のワードが含まれているものを保存
+
+        # 記事に指定のワードが含まれて```いない```ものを保存
+
+        pass
