@@ -22,7 +22,7 @@ class SearchArticleSpider(scrapy.Spider):
         super(SearchArticleSpider, self).__init__(*args, **kwargs)
         # 初期変数を作成
         self.page_offset = 0
-        self.page_limit = 10
+        self.page_limit = 100
         # 複数の保存するファイルを用意
 
     def start_requests(self):
@@ -39,8 +39,8 @@ class SearchArticleSpider(scrapy.Spider):
         if limit is None:
             limit = self.page_limit
         query_words = "unit_id:39166665832988672 " \
-                      "created_at:>=2020-03-01T00:00:00+09:00 " \
-                      "created_at:<=2020-03-02T00:00:00+09:00"  # todo 検索する期間の日付とunit idを外部から渡せるように変更
+                      "created_at:>=2020-01-01T00:00:00+09:00 " \
+                      "created_at:<=2020-01-08T00:00:00+09:00"  # todo 検索する期間の日付とunit idを外部から渡せるように変更
         query = urllib.parse.urlencode({"query": query_words, "offset": offset, "limit": limit})
 
         # urlunparseに渡すデータ作成(リストもしくはタプルで　辞書は壊れる)
